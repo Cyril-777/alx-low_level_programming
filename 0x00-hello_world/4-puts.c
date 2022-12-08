@@ -1,7 +1,8 @@
 #include <stdio.h>
-\*
-* Comment
-*\
+/*
+ * main - Entry
+ * Return: always 0
+ */
 int main(void)
 {
 	puts("\"Programming is like building a multiiingual puzzle");
