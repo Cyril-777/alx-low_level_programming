@@ -3,7 +3,9 @@
 /**
  * print_diagonal - prints
  * @n: num of \\
+ * Return: 0
  */
+
 void print_diagonal(int n)
 {
 	int i = 0, c;
@@ -21,5 +23,7 @@ void print_diagonal(int n)
 		i++;
 	}
 	if (i == 0)
+	{
 		_putchar('\n');
+	}
 }
