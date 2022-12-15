@@ -3,7 +3,7 @@
 /**
  * mul - funct to multiply two int
  * @a: first num
- * @B: second num
+ * @b: second num
  * Return: 0
  */
 
