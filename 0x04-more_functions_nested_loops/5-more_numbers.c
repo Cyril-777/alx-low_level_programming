@@ -2,7 +2,7 @@
 /**
  * more_numbers - prints numbers
  */
- 
+
 void more_numbers(void)
 {
 	char c, n;
