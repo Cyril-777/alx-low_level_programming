@@ -11,7 +11,7 @@ void rev_string(char *s)
 	int i = 0;
 	char *cp = s;
 	int x;
-    int a = 0;
+	int a = 0;
 	char c;
 
 	while (*cp != '\0')
