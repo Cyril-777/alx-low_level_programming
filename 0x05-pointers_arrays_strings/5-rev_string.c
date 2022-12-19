@@ -21,7 +21,7 @@ void rev_string(char *s)
 	}
 
 	i = length - 1;
-	for (a < ((i / 2) + 1); a++)
+	for (; a < ((i / 2) + 1); a++)
 	{
 		x = (i - a);
 		c = s[a];
