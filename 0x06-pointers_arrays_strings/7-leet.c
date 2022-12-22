@@ -19,7 +19,7 @@ char *leet(char *s)
 		{
 			if (s[a] == x[b] || s[a] - 32 == x[b])
 			{
-				s[a] = n[b];
+				s[a] = z[b];
 			}
 
 			b++;
