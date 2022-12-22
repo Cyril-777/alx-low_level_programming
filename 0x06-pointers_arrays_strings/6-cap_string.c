@@ -8,7 +8,7 @@
 char *cap_string(char *str)
 {
 	int i = 0;
-	int a = 0;
+	int a;
 	char c[] = {44, 59, 46, 33, 63, 34, 40, 41, 123, 125, 32, 10, 9};
 
 	while (str[i] != '\0')
@@ -17,6 +17,7 @@ char *cap_string(char *str)
 		{
 			str[i] = str[i] - 32;
 		}
+		a = 0;
 		while (c[a] != '\0')
 		{
 			if (c[a] == str[i] && (str[i + 1] >= 97 && str[i + 1] <= 122))
