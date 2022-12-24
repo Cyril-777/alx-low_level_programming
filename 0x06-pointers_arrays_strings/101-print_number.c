@@ -4,7 +4,6 @@
   * print_number - Prints an integer
   * @n: num
   **/
-  
 void print_number(int n)
 {
 	unsigned int i;
