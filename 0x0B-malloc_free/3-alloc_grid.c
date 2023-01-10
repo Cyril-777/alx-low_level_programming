@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * alloc_grid - function to create a 2d integer grid
  * @width: columns
