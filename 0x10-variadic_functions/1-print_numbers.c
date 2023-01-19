@@ -1,10 +1,11 @@
 #include "variadic_functions.h"
+#include <stdio.h>
 /**
  * print_numbers - prints numbers.
  * @separator: str printed between the numbers
  * @n: num of args
  * Return: void
- */
+ **/
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
@@ -16,7 +17,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(ap, int));
-		if (separator != NULL && i != n - 1)
+		if (separator && i != n - 1)
 			printf("%s", separator);
 	}
 
