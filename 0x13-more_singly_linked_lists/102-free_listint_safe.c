@@ -6,8 +6,8 @@
  **/
 size_t free_listint_safe(listint_t **h)
 {
-	int n;
 	size_t len = 0;
+	int ccc;
 	listint_t *temp;
 
 	if (!h || !*h)
@@ -15,8 +15,8 @@ size_t free_listint_safe(listint_t **h)
 
 	while (*h)
 	{
-		n = *h - (*h)->next;
-		if (n > 0)
+		ccc = *h - (*h)->next;
+		if (ccc > 0)
 		{
 			temp = (*h)->next;
 			free(*h);
