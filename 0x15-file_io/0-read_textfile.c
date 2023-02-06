@@ -7,28 +7,30 @@
  * @letters: num of letters
  * Return: number of letters it could read and print
  **/
-ssizet readtextfile(const char *filename, sizet letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file, nr, wrote;
-	char *buff;
+	int fd;
+	ssize_t nrd, nwr;
+	char *buf;
 
-	buff = malloc(sizeof(*buff) * (letters + 1));
-	if (filename == NULL || buff == NULL)
-	{
-		free(buff);
+	if (!filename)
 		return (0);
-	}
-	file = open(filename, O_RDONLY);
-	if (file == -1)
+
+	fd = open(filename, O_RDONLY);
+
+	if (fd == -1)
 		return (0);
-	nr = read(file, buff, letters);
-	if (nr == -1)
+
+	buf = malloc(sizeof(char) * (letters));
+	if (!buf)
 		return (0);
-	buff[nr] = '\0';
-	wrote = write(STDOUT_FILENO, buff, nr);
-	if (wrote != nr)
-		return (0);
-	free(buff);
-	close(file);
-	return (nr);
+
+	nrd = read(fd, buf, letters);
+	nwr = write(STDOUT_FILENO, buf, nrd);
+
+	close(fd);
+
+	free(buf);
+
+	return (nwr);
 }
