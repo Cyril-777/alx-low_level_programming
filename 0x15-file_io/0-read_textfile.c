@@ -9,35 +9,26 @@
  **/
 ssizet readtextfile(const char *filename, sizet letters)
 {
-	int fd;
-	ssizet nread;
+	int file, nr, wrote;
 	char *buff;
 
-	if (filename == NULL)
-		return (0);
-
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (0);
-
-	buff = malloc(sizeof(char) * letters);
-	if (buff == NULL)
-		return (0);
-
-	nread = read(fd, buff, letters);
-	if (nread == -1)
+	buff = malloc(sizeof(*buff) * (letters + 1));
+	if (filename == NULL || buff == NULL)
 	{
 		free(buff);
 		return (0);
 	}
-
-	if (write(STDOUT_FILENO, buff, nread) != nread)
-	{
-		free(buff);
+	file = open(filename, O_RDONLY);
+	if (file == -1)
 		return (0);
-	}
-
+	nr = read(file, buff, letters);
+	if (nr == -1)
+		return (0);
+	buff[nr] = '\0';
+	wrote = write(STDOUT_FILENO, buff, nr);
+	if (wrote != nr)
+		return (0);
 	free(buff);
-	close(fd);
-	return (nread);
+	close(file);
+	return (nr);
 }
